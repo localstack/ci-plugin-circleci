@@ -1,0 +1,8 @@
+description: Install LocalStack
+
+steps:
+  - run:
+      command: |
+        docker pull localstack/localstack &
+        pip install -q localstack
+      name: Install LocalStack

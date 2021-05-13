@@ -1,0 +1,8 @@
+description: Startup LocalStack instance
+
+executor: default
+
+parameters:
+
+steps:
+  - startup

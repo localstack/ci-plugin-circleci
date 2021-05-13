@@ -1,0 +1,5 @@
+description: This command installs and starts up LocalStack in Docker
+
+steps:
+  - start
+  - wait

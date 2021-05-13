@@ -1,11 +1,11 @@
 description: >
-  This is a sample executor using Docker and Node.
-docker:
-  - image: 'cimg/node:<<parameters.tag>>'
+  LocalStack executor on Ubuntu VM using Docker
+
+machine:
+  image: '<<parameters.image>>'
+
 parameters:
-  tag:
-    default: lts
-    description: >
-      Pick a specific circleci/node image variant:
-      https://hub.docker.com/r/cimg/node/tags
+  image:
+    default: ubuntu-2004:202101-01
+    description: Virtual machine image to use
     type: string

@@ -1,0 +1,7 @@
+description: Start LocalStack in a background Docker container
+
+steps:
+  - install
+  - run:
+      command: DOCKER_FLAGS='-d' localstack start
+      name: Start LocalStack container

@@ -1,0 +1,13 @@
+description: Start LocalStack in a background Docker container
+
+steps:
+  - run:
+      command: |
+        for i in {1..30}; do
+          if [ `docker logs localstack_main | grep 'Ready.'` ]; then
+            break
+          fi
+          sleep 1
+        done
+        docker logs localstack_main
+      name: Wait for LocalStack to be ready
