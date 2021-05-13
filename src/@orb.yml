@@ -1,0 +1,7 @@
+version: 2.1
+
+description: >
+  Easily run integration tests with LocalStack
+
+display:
+  home_url: "https://localstack.cloud/"
