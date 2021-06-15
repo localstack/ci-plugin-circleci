@@ -1,8 +1,17 @@
-description: Install LocalStack
+description: |
+  Install LocalStack.
+
+  Use this command to install the `localstack` CLI and pull the localstack/localstack Docker image.
+
+parameters:
+  image-tag:
+    type: string
+    default: latest
+    description: Tag of the localstack/localstack Docker image to use
 
 steps:
   - run:
-      command: |
-        docker pull localstack/localstack &
-        pip install -q localstack
       name: Install LocalStack
+      command: |
+        docker pull localstack/localstack:$<<parameters.image-tag>> &
+        pip install -q localstack awscli-local[ver1]

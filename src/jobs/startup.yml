@@ -1,8 +1,15 @@
-description: Startup LocalStack instance
+description: |
+  Startup LocalStack instance.
+
+  This job installs LocalStack and starts it up in a local Docker container in the background.
 
 executor: default
 
 parameters:
+  image-tag:
+    type: string
+    default: latest
+    description: Tag of the localstack/localstack Docker image to use
 
 steps:
   - startup

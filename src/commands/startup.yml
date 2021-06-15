@@ -1,4 +1,7 @@
-description: This command installs and starts up LocalStack in Docker
+description: |
+  This command installs and starts up LocalStack in Docker.
+
+  After this command finishes, the LocalStack instance is fully initialized and ready to use.
 
 steps:
   - start

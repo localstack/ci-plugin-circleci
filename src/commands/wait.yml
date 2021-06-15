@@ -1,7 +1,11 @@
-description: Start LocalStack in a background Docker container
+description: |
+  Wait for LocalStack to be up and running.
+
+  This command polls the LocalStack container status until initialization is done and it is ready to use.
 
 steps:
   - run:
+      name: Wait for LocalStack to be ready
       command: |
         for i in {1..30}; do
           if [ `docker logs localstack_main | grep 'Ready.'` ]; then
@@ -10,4 +14,3 @@ steps:
           sleep 1
         done
         docker logs localstack_main
-      name: Wait for LocalStack to be ready

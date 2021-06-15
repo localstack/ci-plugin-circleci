@@ -1,7 +1,20 @@
-description: Start LocalStack in a background Docker container
+description: |
+  Start LocalStack in a background Docker container.
+
+  Use this command to start LocalStack in a background Docker container. To retrieve the logs from this container, you can use the following command in any subsequent build command:
+  ```
+  docker logs -f localstack/localstack
+  ```
+
+parameters:
+  image-tag:
+    type: string
+    default: latest
+    description: Tag of the localstack/localstack Docker image to use
 
 steps:
   - install
   - run:
-      command: DOCKER_FLAGS='-d' localstack start
       name: Start LocalStack container
+      command: |
+        DOCKER_FLAGS='-d' IMAGE_NAME=localstack/localstack:$<<parameters.image-tag>> localstack start

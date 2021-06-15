@@ -1,7 +1,10 @@
 version: 2.1
 
 description: >
-  Easily run integration tests with LocalStack
+  Easily run integration tests with LocalStack, the local cloud testing platform.
+
+  This Orb provides executors and commands to facilitate testing of your cloud application using LocalStack.
 
 display:
-  home_url: "https://localstack.cloud/"
+  home_url: https://localstack.cloud
+  source_url: https://github.com/localstack/ci-plugin-circleci

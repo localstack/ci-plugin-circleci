@@ -1,0 +1,21 @@
+description: |
+  This example illustrates asynchronous LocalStack startup, to optimize the build time by running your test initialization tasks in parallel.
+
+  The sample first uses the `localstack/start` command to start up LocalStack in the background, then performs custom application initialization commands (illustrated via the first `echo` command), and then finally uses the `localstack/wait` command before proceeding with the actual application build logic (second `echo` command).
+
+usage:
+  version: 2.1
+
+  orbs:
+    localstack: localstack/platform@latest
+
+  jobs:
+    localstack-test:
+      executor: localstack/default
+      steps:
+        - localstack/start
+        - run:
+            command: echo "Running my custom application initialization logic ..."
+        - localstack/wait
+        - run:
+            command: echo "Now LocalStack has fully started up, and is ready to use!"

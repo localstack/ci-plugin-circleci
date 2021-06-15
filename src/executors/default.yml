@@ -1,11 +1,11 @@
 description: >
   LocalStack executor on Ubuntu VM using Docker
 
-machine:
-  image: '<<parameters.image>>'
-
 parameters:
   image:
     default: ubuntu-2004:202101-01
     description: Virtual machine image to use
     type: string
+
+machine:
+  image: '<<parameters.image>>'
