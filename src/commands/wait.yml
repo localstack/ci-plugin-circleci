@@ -7,10 +7,10 @@ steps:
   - run:
       name: Wait for LocalStack to be ready
       command: |
-        for i in {1..30}; do
+        for i in {1..45}; do
           if [ `docker logs localstack_main | grep 'Ready.'` ]; then
             break
           fi
           sleep 1
         done
-        docker logs localstack_main
+        # docker logs localstack_main

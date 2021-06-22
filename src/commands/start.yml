@@ -17,4 +17,4 @@ steps:
   - run:
       name: Start LocalStack container
       command: |
-        DOCKER_FLAGS='-d' IMAGE_NAME=localstack/localstack:$<<parameters.image-tag>> localstack start
+        DOCKER_FLAGS='-d' IMAGE_NAME=localstack/localstack:<<parameters.image-tag>> localstack start

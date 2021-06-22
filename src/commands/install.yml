@@ -8,10 +8,14 @@ parameters:
     type: string
     default: latest
     description: Tag of the localstack/localstack Docker image to use
+  install-awslocal:
+    type: boolean
+    default: true
+    description: Whether to install the `awslocal` command line interface into the build environment
 
 steps:
   - run:
       name: Install LocalStack
       command: |
-        docker pull localstack/localstack:$<<parameters.image-tag>> &
-        pip install -q localstack awscli-local[ver1]
+        docker pull localstack/localstack:<<parameters.image-tag>> &
+        test "<<parameters.install-awslocal>>" != "true" || pip3 install -q localstack awscli-local[ver1]
