@@ -1,0 +1,10 @@
+description: |
+  Stop the currently running LocalStack instance.
+
+  This command stops the LocalStack container running in the current build job (using the container name, "localstack_main" by default).
+
+steps:
+  - run:
+      name: Wait for LocalStack to be ready
+      command: |
+        docker rm -f localstack_main

@@ -3,7 +3,7 @@ version: 2.1
 description: >
   Easily run integration tests with LocalStack, the local cloud testing platform.
 
-  This Orb provides executors and commands to facilitate testing of your cloud application using LocalStack.
+  This Orb provides a collection of useful, common, and parameterized tasks and commands to facilitate testing of your cloud application using LocalStack.
 
 display:
   home_url: https://localstack.cloud
