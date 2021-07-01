@@ -5,6 +5,6 @@ description: |
 
 steps:
   - run:
-      name: Wait for LocalStack to be ready
+      name: Stop LocalStack container
       command: |
         docker rm -f localstack_main
