@@ -3,7 +3,7 @@
 [![CircleCI Build Status](https://circleci.com/gh/localstack/ci-plugin-circleci.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/localstack/ci-plugin-circleci)
 [![CircleCI Orb Version](https://badges.circleci.com/orbs/localstack/platform.svg)](https://circleci.com/orbs/registry/orb/localstack/platform)
 
-This is an Orb plugin to simplify running builds using LocalStack in CircleCI.
+This is an Orb plugin to simplify running builds using [LocalStack](https://github.com/localstack/localstack) in CircleCI.
 
 ## Resources
 
