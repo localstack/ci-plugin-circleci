@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2021-07-12
+- Partner integration major release
+
 ## [0.1.0] - 2021-07-06
 - Partner integration release
 
