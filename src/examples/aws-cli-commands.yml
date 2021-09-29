@@ -1,7 +1,8 @@
 description: |
   This example runs a simple LocalStack build that manages S3 buckets and objects locally.
 
-  The sample below uses the `awslocal` CLI command, a drop-in replacement of the `aws` CLI, for use with local APIs on `localhost`. The sample contains 2 steps: first, it starts up LocalStack via the `localstack/startup` command; second, it runs the commands to interact with the local S3 API provided by LocalStack.
+  The sample below uses the `awslocal` CLI command, a drop-in replacement of the `aws` CLI, for use with local APIs on `localhost`.
+  The sample contains 2 steps: first, it starts up LocalStack via the `localstack/startup` command; second, it runs the commands to interact with the local S3 API provided by LocalStack.
 
 usage:
   version: 2.1
@@ -23,4 +24,3 @@ usage:
     localstack-test:
       jobs:
         - localstack-test
-      
