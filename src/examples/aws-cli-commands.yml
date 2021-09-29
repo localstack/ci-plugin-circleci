@@ -18,3 +18,9 @@ usage:
             command: |
               awslocal s3 mb s3://test
               awslocal s3 ls
+
+  workflows:
+    localstack-test:
+      jobs:
+        - localstack-test
+      

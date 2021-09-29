@@ -19,3 +19,8 @@ usage:
         - localstack/wait
         - run:
             command: echo "Now LocalStack has fully started up, and is ready to use!"
+
+  workflows:
+    localstack-test:
+      jobs:
+        - localstack-test
