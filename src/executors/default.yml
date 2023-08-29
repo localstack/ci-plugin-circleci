@@ -3,7 +3,7 @@ description: >
 
 parameters:
   image:
-    default: ubuntu-2004:202101-01
+    default: ubuntu-2204:2023.02.1
     description: Virtual machine image to use
     type: string
 
