@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2023-08-30
+- Major release supporting LocalStack Pro v2.
+- The `image-tag` parameter has been removed. Please use the environment variable `IMAGE_NAME` instead if you want to change the used Docker image or tag.
+
 ## [1.0.0] - 2021-07-12
 - Partner integration major release
 

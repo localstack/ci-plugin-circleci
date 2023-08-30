@@ -4,15 +4,11 @@ description: |
   Use this command to install and start LocalStack in a background Docker container.
   To retrieve the logs from this container, you can use the following command in any subsequent build command:
 
-      docker logs -f localstack_main
+      localstack logs
 
   Note: This command needs to be started with a VM executor (Docker-based executors are not yet supported).
 
 parameters:
-  image-tag:
-    type: string
-    default: latest
-    description: Tag of the localstack/localstack Docker image to use
   install-awslocal:
     type: boolean
     default: true
@@ -22,9 +18,8 @@ steps:
   - run:
       name: Install LocalStack
       command: |
-        docker pull localstack/localstack:<<parameters.image-tag>> &
         test "<<parameters.install-awslocal>>" != "true" || pip3 install -q localstack awscli-local[ver1]
   - run:
       name: Start LocalStack container
       command: |
-        DOCKER_FLAGS='-d' IMAGE_NAME=localstack/localstack:<<parameters.image-tag>> localstack start
+        localstack start -d
