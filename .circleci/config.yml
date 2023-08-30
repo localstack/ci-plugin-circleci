@@ -29,7 +29,6 @@ jobs:
       - run:
           command: |
             which aws
-            pip install awscli-local
             which awslocal
             awslocal s3 mb s3://test
             awslocal s3 ls
