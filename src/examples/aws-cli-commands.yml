@@ -8,7 +8,7 @@ usage:
   version: 2.1
 
   orbs:
-    localstack: localstack/platform@2.0
+    localstack: localstack/platform@3.0
 
   jobs:
     localstack-test:
