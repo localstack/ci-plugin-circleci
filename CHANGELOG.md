@@ -2,9 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.0.0] - 2023-11-02
-- Major release supporting LocalStack Pro v3.
-- The default container name has been updated to `localstack-main`
+## [2.1.0] - 2023-11-02
+- The default container name has been updated to `localstack-main`, but we still manage containers with the name `localstack_main`
 
 ## [2.0.0] - 2023-08-30
 - Major release supporting LocalStack Pro v2.
