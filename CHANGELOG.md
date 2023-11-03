@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2.1.0] - 2023-11-02
+## [2.1.0] - 2023-11-03
 - The default container name has been updated to `localstack-main`, but we still manage containers with the name `localstack_main`
 
 ## [2.0.0] - 2023-08-30
