@@ -11,6 +11,9 @@ steps:
           if [ `docker logs localstack-main | grep 'Ready.'` ]; then
             break
           fi
+          if [ `docker logs localstack_main | grep 'Ready.'` ]; then
+            break
+          fi
           sleep 1
         done
         # docker logs localstack-main

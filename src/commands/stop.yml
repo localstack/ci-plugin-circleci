@@ -7,4 +7,4 @@ steps:
   - run:
       name: Stop LocalStack container
       command: |
-        docker rm -f localstack-main
+        docker rm -f localstack-main localstack_main
