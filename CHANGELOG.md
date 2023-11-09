@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2023-11-03
+- Preparing the Orb for the release of LocalStack 3.0.
+  - The default container name will be renamed from `localstack-main` to `localstack_main`.
+  - This change is backwards compatible, it will fall back to the old container name for now (and will use the new container name once LocalStack 3.0 is released).
+
 ## [2.0.0] - 2023-08-30
 - Major release supporting LocalStack Pro v2.
 - The `image-tag` parameter has been removed. Please use the environment variable `IMAGE_NAME` instead if you want to change the used Docker image or tag.
