@@ -17,9 +17,9 @@ steps:
         equal: [ <<parameters.action>>, load ]
       steps:
         - persist_to_workspace:
-          root: .
-          paths:
-            - <<parameters.name>>.zip
+            root: .
+            paths:
+              - <<parameters.name>>.zip
   - run:
       command: |
         if [ "$ACTION" = "save" ]; then
@@ -35,6 +35,6 @@ steps:
   - when:
       condition:
         equal: [ <<parameters.action>>, save ]
-      steps:
-        - store_artifacts:
+    steps:
+      - store_artifacts:
           path: <<parameters.name>>.zip
