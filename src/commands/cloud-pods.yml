@@ -3,7 +3,7 @@ description: |
 
 parameters:
   pod-name:
-    description: 'Action to perform (save or load)'
+    description: Name of the Cloud Pod'
     type: string
     default: 'cloud-pod'
   pod-action:
