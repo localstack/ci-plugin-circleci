@@ -9,7 +9,7 @@ description: |
   Note: This command needs to be started with a VM executor (Docker-based executors are not yet supported).
 
 parameters:
-  install-awslocal:
+  install_awslocal:
     type: boolean
     default: true
     description: Whether to install the `awslocal` command line interface into the build environment (requires python3 and pip3)
@@ -17,8 +17,7 @@ parameters:
 steps:
   - run:
       name: Install LocalStack
-      command: |
-        test "<<parameters.install-awslocal>>" != "true" || pip3 install -q localstack awscli-local[ver1]
+      command: <<include(scripts/install_awscli.sh)>>
   - run:
       name: Start LocalStack container
       command: |

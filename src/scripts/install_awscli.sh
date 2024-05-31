@@ -1,0 +1,1 @@
+test "<<parameters.install_awslocal>>" != "true" || pip3 install -q localstack awscli-local[ver1]
