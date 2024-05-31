@@ -1,0 +1,33 @@
+description: |
+  Start or Stop LocalStack Ephemeral Instance.
+
+parameters:
+  ephemeral_action:
+    description: 'Action to perform (start or stop)'
+    type: enum
+    values:
+      - 'start'
+      - 'stop'
+    default: 'start'
+  localstack_api_key:
+    description: 'LocalStack API key used to create the preview environment'
+    type: string
+    default: ''
+  preview_cmd:
+    description: 'Command(s) used to create a preview of the PR (can use $AWS_ENDPOINT_URL)'
+    type: string
+    default: ''
+  auto_load_pod:
+    description: 'The pod to load on startup of LocalStack, the env var AUTO_LOAD_POD'
+    type: string
+    default: ''
+
+steps:
+  - run:
+      name: Process Ephemeral Instance
+      environment:
+        ACTION: << parameters.ephemeral_action >>
+        PREVIEW_CMD: << parameters.preview_cmd >>
+        PARAM_AUTO_LOAD_POD: << parameters.auto_load_pod >>
+        PARAM_LOCALSTACK_API_KEY: << parameters.localstack_api_key >>
+      command: << include(scripts/ephemeral.sh) >>
