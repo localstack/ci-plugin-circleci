@@ -5,7 +5,7 @@ parameters:
   ephemeral_action:
     description: 'Action to perform (start or stop)'
     type: enum
-    values:
+    enum:
       - 'start'
       - 'stop'
     default: 'start'

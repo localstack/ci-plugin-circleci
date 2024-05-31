@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2024-06-03
+- Relying more on LocalStack CLI in wait and stop
+- Add support for Cloud Pods
+- Add support for Ephmeral Instances
+- New examples for Cloud Pods and Ephemeral Instances usage
+
 ## [2.1.0] - 2023-11-03
 - Preparing the Orb for the release of LocalStack 3.0.
   - The default container name will be renamed from `localstack-main` to `localstack_main`.

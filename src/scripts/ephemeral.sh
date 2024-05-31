@@ -7,7 +7,7 @@ if [ "$ACTION" = "start" ]; then
         -H "ls-api-key: ${LOCALSTACK_API_KEY:-${PARAM_LOCALSTACK_API_KEY}}" \
         -H "authorization: token ${LOCALSTACK_API_KEY:-${LOCALSTACK_API_KEY}}" \
         -H "content-type: application/json" \
-        https://api.localstack.cloud/v1/previews/$previewName)
+        "https://api.localstack.cloud/v1/previews/$previewName")
     endpointUrl=$(echo "$response" | jq -r .endpoint_url)
     if [ "$endpointUrl" = "null" ] || [ "$endpointUrl" = "" ]; then
         echo "Unable to create preview environment. API response: $response"
@@ -24,7 +24,7 @@ elif [ "$ACTION" = "stop" ]; then
         -H "ls-api-key: ${LOCALSTACK_API_KEY:-${LOCALSTACK_API_KEY}}" \
         -H "authorization: token ${LOCALSTACK_API_KEY:-${LOCALSTACK_API_KEY}}" \
         -H "content-type: application/json" \
-        https://api.localstack.cloud/v1/previews/$previewName)
+        "https://api.localstack.cloud/v1/previews/$previewName")
     if [[ "$response" != "{}" ]]; then
         # In case the deletion fails, e.g. if the instance cannot be found, we raise a proper error on the platform
         echo "Unable to delete preview environment. API response: $response"

@@ -9,7 +9,7 @@ parameters:
   pod_action:
     description: 'Action to perform (save or load)'
     type: enum
-    values:
+    enum:
       - 'save'
       - 'load'
     default: 'save'
