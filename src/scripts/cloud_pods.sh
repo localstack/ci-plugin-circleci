@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ "$ACTION" = "save" ]; then
     echo "Saving Cloud Pod $NAME"
     localstack pod save "$NAME"

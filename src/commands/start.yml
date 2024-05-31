@@ -17,6 +17,8 @@ parameters:
 steps:
   - run:
       name: Install LocalStack
+      environment:
+        INSTALL_AWSLOCAL: << parameters.install_awslocal >>
       command: <<include(scripts/install_awscli.sh)>>
   - run:
       name: Start LocalStack container
