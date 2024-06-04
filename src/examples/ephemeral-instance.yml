@@ -15,12 +15,13 @@ usage:
     localstack-test:
       executor: localstack/default
       steps:
-        - localstack/start
+        - localstack/ephemeral:
+            auto_load_pod: circleci_test_pod
         - run:
-            command: echo "Running my custom application initialization logic ..."
-        - localstack/wait
-        - run:
-            command: echo "Now LocalStack has fully started up, and is ready to use!"
+            command: |
+              echo "Running checks on my preloaded state..."
+              awslocal sqs get-queue-url --queue-name=test-queue
+              awslocal s3 ls s3://test
 
   workflows:
     localstack-test:
