@@ -15,11 +15,8 @@ parameters:
     description: Whether to install the `awslocal` command line interface into the build environment (requires python3 and pip3)
 
 steps:
-  - run:
-      name: Install LocalStack
-      environment:
-        INSTALL_AWSLOCAL: << parameters.install_awslocal >>
-      command: <<include(scripts/install_awscli.sh)>>
+  - tools:
+      install_awslocal: << parameters.install_awslocal >>
   - run:
       name: Start LocalStack container
       command: |
