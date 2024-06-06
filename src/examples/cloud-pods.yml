@@ -1,9 +1,9 @@
 description: |
-  This example illustrates asynchronous LocalStack startup, to optimize the build time by running your test initialization tasks in parallel.
+  This example illustrates Cloud Pods usage with LocalStack to store the deployed infrastructure's state.
 
-  The sample first uses the `localstack/start` command to start up LocalStack in the background,
-  then performs custom application initialization commands (illustrated via the first `echo` command),
-  and then finally uses the `localstack/wait` command before proceeding with the actual application build logic (second `echo` command).
+  The sample first uses the `localstack/startup` command to start up LocalStack in the background,
+  then performs some infrastructure provisioning with awscli
+  and then finally uses the `localstack/cloud-pods` command to store the state in a Cloud Pod.
 
 usage:
   version: 2.1

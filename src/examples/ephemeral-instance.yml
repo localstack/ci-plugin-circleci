@@ -1,9 +1,9 @@
 description: |
-  This example illustrates asynchronous LocalStack startup, to optimize the build time by running your test initialization tasks in parallel.
+  This example illustrates LocalStack's Ephemeral Instance usage.
 
-  The sample first uses the `localstack/start` command to start up LocalStack in the background,
-  then performs custom application initialization commands (illustrated via the first `echo` command),
-  and then finally uses the `localstack/wait` command before proceeding with the actual application build logic (second `echo` command).
+  The sample first uses the `localstack/ephemeral` command to start up an ephemeral LocalStack instance,
+  which in this case loads a previous state from a Cloud Pod,
+  and then finally checks the expected resources already deployed in the state.
 
 usage:
   version: 2.1
