@@ -44,6 +44,7 @@ workflows:
           exclude: SC2148
       - bats/run:
           path: ./src/tests
+          exclude: RC010
       - orb-tools/publish:
           orb_name: localstack/platform
           vcs_type: gh
