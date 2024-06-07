@@ -44,7 +44,6 @@ workflows:
           exclude: SC2148
       - bats/run:
           path: ./src/tests
-          exclude: RC010
       - orb-tools/publish:
           orb_name: localstack/platform
           vcs_type: gh
@@ -58,6 +57,7 @@ workflows:
       - orb-tools/review:
           name: trigger-integration-dev
           # context: ctx1
+          exclude: RC010
           requires:
             - orb-tools/publish
 
