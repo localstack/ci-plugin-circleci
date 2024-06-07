@@ -21,14 +21,8 @@ parameters:
     description: 'The pod to load on startup of LocalStack, the env var AUTO_LOAD_POD'
     type: string
     default: ''
-  install_awslocal:
-    type: boolean
-    default: true
-    description: Whether to install the `awslocal` command line interface into the build environment (requires python3 and pip3)
 
 steps:
-  - tools:
-      install_awslocal: << parameters.install_awslocal >>
   - run:
       name: Process Ephemeral Instance
       environment:
