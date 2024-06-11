@@ -60,6 +60,7 @@ workflows:
           exclude: RC010
           requires:
             - orb-tools/publish
+      - integration-test-1
 
   # This `integration-test_deploy` workflow will only run
   # when the run-integration-tests pipeline parameter is set to true.
