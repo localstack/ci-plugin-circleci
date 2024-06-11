@@ -16,10 +16,10 @@ parameters:
 
 steps:
   - run:
-      name: Install LocalStack
-      command: |
-        test "<<parameters.install-awslocal>>" != "true" || pip3 install -q localstack awscli-local[ver1]
+      name: Install Localstack
+      command: pip3 install --upgrade pip && pip3 install -q localstack
+  - tools:
+      install_awslocal: << parameters.install-awslocal >>
   - run:
       name: Start LocalStack container
-      command: |
-        localstack start -d
+      command: localstack start -d
