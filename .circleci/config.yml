@@ -1,10 +1,10 @@
 version: 2.1
 
 orbs:
-  localstack: localstack/platform@<< pipeline.parameters.dev-orb-version >>
-  orb-tools: circleci/orb-tools@12.1.0
-  bats: circleci/bats@1.1.0
-  shellcheck: circleci/shellcheck@3.2.0
+  localstack: localstack/platform@<<pipeline.parameters.dev-orb-version>>
+  orb-tools: circleci/orb-tools@10.0
+  bats: circleci/bats@1.0
+  shellcheck: circleci/shellcheck@2.0
 
 # Pipeline Parameters
 parameters:
@@ -44,9 +44,8 @@ workflows:
           exclude: SC2148
       - bats/run:
           path: ./src/tests
-      - orb-tools/publish:
-          orb_name: localstack/platform
-          vcs_type: gh
+      - orb-tools/publish-dev:
+          orb-name: localstack/platform
           # context: ctx1
           requires:
             - orb-tools/lint
@@ -54,12 +53,11 @@ workflows:
             - bats/run
             - shellcheck/check
       # Trigger an integration workflow to test the dev:${CIRCLE_SHA1:0:7} version of your orb
-      - orb-tools/review:
+      - orb-tools/trigger-integration-tests-workflow:
           name: trigger-integration-dev
           # context: ctx1
-          exclude: RC010
           requires:
-            - orb-tools/publish
+            - orb-tools/publish-dev
 
   # This `integration-test_deploy` workflow will only run
   # when the run-integration-tests pipeline parameter is set to true.
@@ -76,11 +74,12 @@ workflows:
       # version will be published or if publishing should
       # be skipped.
       # e.g. [semver:patch] will cause a patch version to be published.
-      - orb-tools/publish:
-          orb_name: localstack/platform
-          vcs_type: gh
+      - orb-tools/dev-promote-prod-from-commit-subject:
+          orb-name: localstack/platform
           # context: ctx1
-          pub_type: production
+          add-pr-comment: false
+          fail-if-semver-not-indicated: true
+          publish-version-tag: false
           requires:
             - integration-test-1
           filters:
