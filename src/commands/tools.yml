@@ -1,0 +1,14 @@
+description: |
+  Install LocalStack tools.
+
+parameters:
+  install_awslocal:
+    type: boolean
+    default: true
+    description: Whether to install the `awslocal` command line interface into the build environment (requires python3 and pip3)
+
+steps:
+  - when:
+      condition: <<parameters.install_awslocal>>
+      steps:
+        - run: pip3 install -q awscli-local[ver1]
