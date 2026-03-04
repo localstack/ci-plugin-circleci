@@ -25,11 +25,9 @@ jobs:
     executor: localstack/default
     steps:
       - run:
-          name: Manually clone Repository
+          name: Manually Clone Repository
           command: |
-            echo "$CIRCLE_BRANCH"
-            echo "$CIRCLE_REPOSITORY_URL"
-            git clone -b "$CIRCLE_BRANCH" "$CIRCLE_REPOSITORY_URL"
+            git clone -b "$CIRCLE_BRANCH" https://github.com/localstack/ci-plugin-circleci.git
       - localstack/startup
       - run:
           command: |
