@@ -25,6 +25,7 @@ jobs:
     executor: localstack/default
     steps:
       - checkout
+          force-ssh: false
       - localstack/startup
       - run:
           command: |
