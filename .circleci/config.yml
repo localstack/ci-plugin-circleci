@@ -24,7 +24,7 @@ jobs:
   integration-test-1:
     executor: localstack/default
     steps:
-      - checkout
+      - checkout:
           force-ssh: false
       - localstack/startup
       - run:
