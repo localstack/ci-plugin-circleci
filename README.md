@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> The `localstack/platform` orb is now deprecated. Official support for the `localstack/platform` orb is no longer provided. It is still available for existing users but is now **unlisted** from the Orb Registry page.
+
 # LocalStack CircleCI Orb
 
 [![CircleCI Build Status](https://circleci.com/gh/localstack/ci-plugin-circleci.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/localstack/ci-plugin-circleci)
