@@ -24,7 +24,12 @@ jobs:
   integration-test-1:
     executor: localstack/default
     steps:
-      - checkout
+      - run:
+          name: Manually clone Repository
+          command: |
+            echo "$CIRCLE_BRANCH"
+            echo "$CIRCLE_REPOSITORY_URL"
+            git clone -b "$CIRCLE_BRANCH" "$CIRCLE_REPOSITORY_URL"
       - localstack/startup
       - run:
           command: |
