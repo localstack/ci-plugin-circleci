@@ -24,7 +24,10 @@ jobs:
   integration-test-1:
     executor: localstack/default
     steps:
-      - checkout
+      - run:
+          name: Manually Clone Repository
+          command: |
+            git clone -b "$CIRCLE_BRANCH" https://github.com/localstack/ci-plugin-circleci.git
       - localstack/startup
       - run:
           command: |

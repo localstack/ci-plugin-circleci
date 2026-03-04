@@ -1,6 +1,7 @@
 version: 2.1
 
 description: >
+  Note: This orb has now been deprecated and will no longer be actively supported.
   Easily run integration tests with LocalStack, the local cloud testing platform.
 
   This Orb provides a collection of useful, common, and parameterized tasks and commands to facilitate testing of your cloud application using LocalStack.
