@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> The `localstack/platform` orb is now deprecated. Official support for the `localstack/platform` orb is no longer provided. It is still available for existing users but is now **unlisted** from the Orb Registry page.
+> The `localstack/platform` orb is now deprecated. This means official support for the `localstack/platform` orb is no longer provided. It is still available usage but is now **unlisted** from the Orb Registry page.
 
 # LocalStack CircleCI Orb
 
